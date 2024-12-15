@@ -44,7 +44,7 @@ class StockBot:
             btn_download.wait_for()
             btn_download.click()
 
-        download_name = f"stock_{date}"
+        download_name = f"stock_{date}.xlsx"
         download_file = download_info.value
         download_file.save_as(download_name)
 

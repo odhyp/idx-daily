@@ -1,0 +1,12 @@
+[project]
+name = "idx-daily"
+version = "0.1.0"
+description = "Automated downloader for daily Ringkasan Saham (stock summaries) from IDX.co.id"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [
+    { name = "Odhy Pradhana", email="hello@odhyp.com"}
+]
+dependencies = [
+    "playwright>=1.53.0",
+]

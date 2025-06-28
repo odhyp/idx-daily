@@ -9,4 +9,5 @@ authors = [
 ]
 dependencies = [
     "playwright>=1.53.0",
+    "typer>=0.16.0",
 ]

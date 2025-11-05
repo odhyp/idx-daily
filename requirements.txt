@@ -1,0 +1,12 @@
+greenlet==3.2.4
+inquirerpy==0.3.4
+markdown-it-py==4.0.0
+mdurl==0.1.2
+pfzy==0.3.4
+playwright==1.55.0
+prompt_toolkit==3.0.52
+pyee==13.0.0
+Pygments==2.19.2
+rich==14.2.0
+typing_extensions==4.15.0
+wcwidth==0.2.14

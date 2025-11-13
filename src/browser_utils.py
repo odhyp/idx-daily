@@ -11,7 +11,7 @@ from pathlib import Path
 log = logging.getLogger(__name__)
 
 
-def launch_chrome(chrome_path, user_data_dir, port: int = 9222):
+def launch_chrome(chrome_path: str, user_data_dir: str, port: int = 9222) -> None:
     Path(user_data_dir).mkdir(exist_ok=True)
     cmd = f'"{chrome_path}" --remote-debugging-port={port} --user-data-dir="{user_data_dir}"'
 

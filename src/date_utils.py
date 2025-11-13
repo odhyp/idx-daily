@@ -1,24 +1,54 @@
 """
-Date related
+Date utilities
 """
 
 from datetime import datetime, timedelta
 
+DATE_FORMAT = "%Y-%m-%d"
 
-def validate_date(date_str: str, fmt: str = "%Y-%m-%d") -> bool:
+
+def validate_date(date_str: str, date_format: str = DATE_FORMAT) -> bool:
+    """Return True if date_str matches format, otherwise False."""
     try:
-        datetime.strptime(date_str, fmt)
+        datetime.strptime(date_str, date_format)
         return True
     except ValueError:
         return False
 
 
-def generate_date_range(start_date: str, end_date: str) -> list:
-    formatted_start_date = datetime.strptime(start_date, "%Y-%m-%d")
-    formatted_end_date = datetime.strptime(end_date, "%Y-%m-%d")
-    date_range_length = (formatted_end_date - formatted_start_date).days + 1
-    date_list = [
-        (formatted_start_date + timedelta(days=i)).strftime("%Y-%m-%d")
-        for i in range(date_range_length)
-    ]
-    return date_list
+def generate_date_range(
+    start_date: str, end_date: str, date_format: str = DATE_FORMAT
+) -> list:
+    """Generate a list of dates between start_date and end_date,
+    skipping weekends."""
+    start = datetime.strptime(start_date, date_format)
+    end = datetime.strptime(end_date, date_format)
+
+    if end < start:
+        raise ValueError("end_date must not be earlier than start_date!")
+
+    dates = []
+    current = start
+    while current <= end:
+        if current.weekday() < 5:
+            dates.append(current.strftime(date_format))
+        current += timedelta(days=1)
+    return dates
+
+
+def count_days(start_date: str, end_date: str, date_format: str = DATE_FORMAT) -> str:
+    """Count business days between start_date and end_date,
+    skipping weekends."""
+    start = datetime.strptime(start_date, date_format)
+    end = datetime.strptime(end_date, date_format)
+
+    if end < start:
+        raise ValueError("end_date must not be earlier than start_date")
+
+    count = 0
+    current = start
+    while current <= end:
+        if current.weekday() < 5:
+            count += 1
+        current += timedelta(days=1)
+    return str(count)

@@ -1,0 +1,6 @@
+[base]
+# Path to Chrome.exe
+chrome_dir = "C:/Program Files/Google/Chrome/Application/chrome.exe"
+
+# Ringkasan Saham URL
+base_url = ""

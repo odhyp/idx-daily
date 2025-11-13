@@ -3,4 +3,4 @@
 chrome_dir = "C:/Program Files/Google/Chrome/Application/chrome.exe"
 
 # Ringkasan Saham URL
-base_url = ""
+base_url = "https://idx.co.id/id/data-pasar/ringkasan-perdagangan/ringkasan-saham/"

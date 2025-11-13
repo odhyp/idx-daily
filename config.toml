@@ -2,5 +2,8 @@
 # Path to Chrome.exe
 chrome_dir = "C:/Program Files/Google/Chrome/Application/chrome.exe"
 
+# Output dir for downloaded files
+output_dir = "output/"
+
 # Ringkasan Saham URL
 base_url = "https://idx.co.id/id/data-pasar/ringkasan-perdagangan/ringkasan-saham/"

@@ -13,6 +13,15 @@ from rich.console import Console
 log = logging.getLogger(__name__)
 console = Console()
 
+def show_header() -> None:
+    """Display header."""
+    title = "[bold yellow]IDX Daily 📈[/]"
+    subtitle = f"[grey50]{APP_VERSION}[/]"
+
+    console.print(title)
+    console.print(subtitle)
+    console.print()
+
 
 def main_menu():
     """Display main menu and return the selected option."""

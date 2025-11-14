@@ -16,6 +16,7 @@ log = logging.getLogger(__name__)
 
 
 def run():
+    """Run the app."""
     log.debug("Starting IDX Daily...")
     run_menu()
     log.debug("Goodbye!")

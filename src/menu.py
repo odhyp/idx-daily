@@ -26,21 +26,25 @@ console = Console()
 
 def menu_download():
     today_date = datetime.now().strftime("%Y-%m-%d")
+    long_instruction = """Instructions:
+- Date format: YYYY-MM-DD
+- Future date is invalid
+- End date should not be earlier than start date"""
 
     start_date = InputPrompt(
         message="Enter start date: ",
         default=today_date,
-        long_instruction="Date format. Use YYYY-MM-DD",
-        validate=is_valid_date,
-        invalid_message="Invalid date format. Use YYYY-MM-DD",
+        long_instruction=long_instruction,
+        validate=validate_date,
+        invalid_message="Invalid input! Read instructions below",
     ).execute()
 
     end_date = InputPrompt(
         message="Enter end date: ",
         default=today_date,
-        long_instruction="Date format. Use YYYY-MM-DD",
-        validate=is_valid_date,
-        invalid_message="Invalid date format. Use YYYY-MM-DD",
+        long_instruction=long_instruction,
+        validate=validate_date,
+        invalid_message="Invalid input! Read instructions below",
     ).execute()
 
     total_days = count_days(start_date, end_date)
@@ -49,7 +53,7 @@ def menu_download():
     table = Table(title=None, show_header=False, box=None)
     table.add_row("Start date", ":", start_date)
     table.add_row("End date", ":", end_date)
-    table.add_row("Total day(s)", ":", total_days)
+    table.add_row("Total work day(s)", ":", total_days)
 
     console.print()
     console.print(table)

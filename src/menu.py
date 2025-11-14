@@ -25,6 +25,7 @@ console = Console()
 
 
 def menu_download():
+    """Run the interactive download workflow."""
     today_date = datetime.now().strftime("%Y-%m-%d")
     long_instruction = """Instructions:
 - Date format: YYYY-MM-DD

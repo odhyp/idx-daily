@@ -12,6 +12,7 @@ log = logging.getLogger(__name__)
 
 
 def download(bm: BrowserManager, output_dir: str, dates: list) -> None:
+    """Download Ringkasan Saham using BrowserManager."""
     log.info("🚩 Starting download...")
 
     # Initialize

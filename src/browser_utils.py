@@ -12,6 +12,7 @@ log = logging.getLogger(__name__)
 
 
 def launch_chrome(chrome_path: str, user_data_dir: str, port: int = 9222) -> None:
+    """Launch Chrome browser instance."""
     Path(user_data_dir).mkdir(exist_ok=True)
     cmd = f'"{chrome_path}" --remote-debugging-port={port} --user-data-dir="{user_data_dir}"'
 

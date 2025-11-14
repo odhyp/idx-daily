@@ -16,6 +16,15 @@ def is_valid_date(date_str: str, date_format: str = DATE_FORMAT) -> bool:
         return False
 
 
+def is_valid_non_future(date_str: str, fmt: str = DATE_FORMAT) -> bool:
+    """Return True if date_str is not in the future, otherwise False."""
+    try:
+        d = datetime.strptime(date_str, fmt)
+    except ValueError:
+        return False
+    return d.date() <= datetime.today().date()
+
+
 def is_valid_range(start_date: str, end_date: str, fmt: str = DATE_FORMAT) -> bool:
     """Return True if end_date is the same or after start_date."""
     try:

@@ -116,7 +116,9 @@ def run_menu():
         except KeyboardInterrupt:
             console.print("\n[bold red]Operation cancelled by user (Ctrl+C).[/]")
             console.input("Press [bold yellow]ENTER[/] to continue...\n")
+            break
 
         except Exception as e:
             log.error("Error occurred: %s", e)
             console.input("\nPress [bold yellow]ENTER[/] to continue...\n")
+            break

@@ -15,7 +15,7 @@ from rich.table import Table
 
 from src.browser_manager import BrowserManager
 from src.browser_utils import launch_chrome
-from src.constants import APP_VERSION, CHROME_DIR, OUTPUT_DIR, BASE_URL
+from src.constants import APP_VERSION, CHROME_DIR, OUTPUT_DIR
 from src.date_utils import count_days, generate_date_range, validate_date
 from src.downloader import download
 

@@ -15,9 +15,11 @@ from playwright.sync_api import (
     Page,
     Error,
 )
+from rich.console import Console
 
 
 log = logging.getLogger(__name__)
+console = Console()
 
 
 class BrowserManager:
@@ -44,6 +46,7 @@ class BrowserManager:
 
         except Error as e:
             log.error("❌ Failed to connect to Chrome via CDP: %s", e)
+            console.print("[red]Launch the Chrome browser using Launch Chrome menu![/]")
             raise ConnectionError(
                 "Could not connect to Chrome. Is it running with --remote-debugging-port=9222?"
             ) from e

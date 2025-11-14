@@ -16,7 +16,7 @@ from rich.table import Table
 from src.browser_manager import BrowserManager
 from src.browser_utils import launch_chrome
 from src.constants import APP_VERSION, CHROME_DIR, OUTPUT_DIR
-from src.date_utils import count_days, generate_date_range, validate_date
+from src.date_utils import count_days, generate_date_range, is_valid_date
 from src.downloader import download
 
 
@@ -31,7 +31,7 @@ def menu_download():
         message="Enter start date: ",
         default=today_date,
         long_instruction="Date format. Use YYYY-MM-DD",
-        validate=validate_date,
+        validate=is_valid_date,
         invalid_message="Invalid date format. Use YYYY-MM-DD",
     ).execute()
 
@@ -39,7 +39,7 @@ def menu_download():
         message="Enter end date: ",
         default=today_date,
         long_instruction="Date format. Use YYYY-MM-DD",
-        validate=validate_date,
+        validate=is_valid_date,
         invalid_message="Invalid date format. Use YYYY-MM-DD",
     ).execute()
 

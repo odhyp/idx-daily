@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 DATE_FORMAT = "%Y-%m-%d"
 
 
-def validate_date(date_str: str, date_format: str = DATE_FORMAT) -> bool:
+def is_valid_date(date_str: str, date_format: str = DATE_FORMAT) -> bool:
     """Return True if date_str matches format, otherwise False."""
     try:
         datetime.strptime(date_str, date_format)

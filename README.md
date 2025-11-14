@@ -1,3 +1,3 @@
 # IDX Daily
 
-Automates the daily retrieval of stock summary data (Ringkasan Saham) from the Indonesia Stock Exchange (IDX)
+A command line tool that fetches daily stock summary data from the Indonesia Stock Exchange and saves it locally.
